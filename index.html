@@ -1,79 +1,204 @@
-<!DOCTYPE html>    
+<!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport"
-content="width=device-width,
-initial-scale=1.0">
-<h2>Test de emociones </h2>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Página Mejorada</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://img.freepik.com/vector-gratis/fondo-huella-mano-sangre-dibujado-mano_23-2150746154.jpg?size=626&ext=jpg&ga=GA1.2.340231643.1718696512&semt=ais_user'); /* URL de tu imagen de fondo */
+            background-size: cover; /* Hace que la imagen cubra toda la pantalla */
+            background-attachment: fixed; /* Hace que la imagen de fondo se mantenga fija al hacer scroll */
+            background-position: center; /* Centra la imagen de fondo */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            color: #39f90e;
+        }
+        header {
+            background-color: #ff0000;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            background-image: url('https://img.freepik.com/vector-gratis/fondo-huella-mano-sangre-dibujado-mano_23-2150746154.jpg?size=626&ext=jpg&ga=GA1.2.340231643.1718696512&semt=ais_user');
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(250, 0, 0, 0.1);
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #000000;
+            padding: 0.5em 0;
+            background-image: url('https://img.freepik.com/vector-gratis/elementos-halloween-sobre-fondo-verde_1048-3234.jpg?size=626&ext=jpg&ga=GA1.2.340231643.1718696512&semt=ais_user');
+        }
+        nav a {
+            color: white;
+            margin: 0 1em;
+            text-decoration: none;
+            padding: 0.5em;
+            transition: background-color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #ff0000;
+            border-radius: 5px;
+        }
+        main {
+            padding: 2em;
+            max-width: 800px;
+            margin: 2em auto;
+            background-image: url('https://img.freepik.com/foto-gratis/fondo-pantalla-halloween-mano-zombie_23-2149122586.jpg?size=626&ext=jpg&ga=GA1.1.340231643.1718696512&semt=ais_user');
+            background-color: #0b25eae6; /* Fondo azul con algo de transparencia */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            animation: move 5s infinite alternate; /* Aplicar animación */
+        }
+        @keyframes move {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(20px);
+            }
+        }
+        section {
+            padding: 2em;
+            max-width: 800px;
+            margin: 2em auto;
+            background-image: url('https://img.freepik.com/foto-gratis/camino-vacio-atmosfera-oscura_23-2150914150.jpg?size=626&ext=jpg&ga=GA1.2.340231643.1718696512&semt=ais_user'); /* CONTENEDOR SEGUNDO DE ENMEDIO */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            animation: slide 5s infinite alternate; /* Aplicar animación */
+        }
+        section p {
+            color: rgb(255, 0, 0); /* Color azul para el texto dentro del segundo contenedor */
+        }
+        @keyframes slide {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(20px);
+            }
+        }
+        .large-container {
+            padding: 2em;
+            max-width: 600px; /* Hacer menos ancho */
+            margin: 4em auto 2em; /* Añadir más separación del contenedor anterior */
+            background-color: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 16px;
+            animation: float 6s infinite alternate; /* Aplicar animación */
+            color: white;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-20px);
+            }
+        }
+        .large-container button {
+            display: block;
+            width: 100%;
+            padding: 1em;
+            margin-bottom: 1em;
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .large-container button:hover {
+            background-color: #990000;
+        }
+        p {
+            line-height: 1.6;
+        }
+        footer {
+            text-align: center;
+            padding: 1em 0;
+            background-color: #000000;
+            color: rgb(255, 1, 1);
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        a {
+            color: hsl(0, 100%, 50%);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #3108ff;
+        }
+    </style>
 </head>
 <body>
-<h1>Test de emociones </h1>
-<form action="/submit" method="post">
-<div>
-<h2 for="Nombre">Nombre:</h2>
-<input type="text" id="Nombre" name="Nombre" required>
-</div>
-<div>
-<h2 for="edad">Edad:</h2>
-<input type="number" id="edad" name="edad" required>
-</div>
- 
-<h2>Preguntas acerca de tus emociones</h2>
+    <header>
+        <h1>𝙵𝙰𝙽𝙶𝙾𝚁𝙴.𝙲𝙾𝙼</h1>
+    </header>
+    <nav>
+        <a href="#𝙃𝙊𝙈𝙀">𝙄𝙉𝙄𝘾𝙄𝙊</a>
+        <a href="#𝘼𝘽𝙊𝙐𝙏">𝙏𝙀𝙍𝙍𝙊𝙍</a>
+        <a href="#𝘾𝙊𝙉𝙏𝘼𝘾𝙏">𝘾𝙊𝙉𝙏𝘼𝘾𝙏𝙊</a>
+    </nav>
+    <main>
+        <p>𝐵𝐼𝐸𝒩𝒱𝐸𝒩𝐼𝒟𝒪 𝒜𝒩𝒪𝒩𝐼𝑀𝒪 𝒟𝐸 𝐿𝒜 𝑅𝐸𝒟, 𝐸𝒮𝒯𝒜 𝒫𝒜𝒢𝐼𝒩𝒜 𝐸𝒮𝒯𝐴 𝒞𝑅𝐸𝒜𝒟𝒜 𝒫𝒜𝑅𝒜 𝒬𝒰𝐸 𝒫𝒰𝐸𝒟𝒜𝒮 𝒱𝐸𝑅 𝒱𝐼𝒟𝐸𝒪𝒮 𝒬𝒰𝐸 𝐸𝒮𝒯𝐸𝒮 𝐵𝒰𝒮𝒞𝒜𝒩𝒟𝒪 𝒞𝒪𝒩 𝒰𝒩 𝒮𝒪𝐿𝒪 𝒞𝐿𝐼𝒞𝒦.</p>
+    </main>
+    <section>
+        <p>A CONTINUACION ESTARA EL CONTENIDO ,SE RECOMIENDA DISCRECION Y QUE VEAS EL CONTENIDO BAJO TU PROPIA RESPONSABILIDAD, PUEDES SOLICITAR UN VIDEO EN ESPECIFICO EN TIKTOK.</p>
+    </section>
+    <div class="large-container">
+        <button onclick="location.href='video1.html.mp4'">VENGANZA</button>
+        <button onclick="location.href='niños2.html.mp4'">TORETO</button>
+        <button onclick="location.href='cortesito3.html.mp4'">PELUQUERO</button>
+        <button onclick="location.href='tontito4.html.mp4'">AUTODESTRUCCION</button>
+        <button onclick="location.href='rayos5.html.mp4'">FUTBOLITO?</button>
+        <button onclick="location.href='waterdroop6.html.mp4'">SALTO DE FE</button>
+        <button onclick="location.href='volo7.html.mp4'">AL INFINITO Y MAS HAYA</button>
+        <button onclick="location.href='chispas8.html.mp4'">UNA TONTITA + 1AK47</button>
+        <button onclick="location.href='bromita9.html.mp4'">¿ LEVITACIONES ?</button>
+        <button onclick="location.href='video10.html.mp4'">SE CREIA JHON WEEK</button>
+        <button onclick="location.href='ballenavoladora12.html.mp4'">LAS BALLENAS SI VUELAN </button>
+        <button onclick="location.href='entradaepica13.html.mp4'">ENTRADA CON ESTILO</button>
+        <button onclick="location.href='ladecancerbero14.html.mp4'">EL CORAZON TUCUN TUCUN </button>
+        <button onclick="location.href='legos15.html.mp4'">LEGOS</button>
+        <button onclick="location.href='perritobonito16.html.mp4'">PERRO BIEN EDUCADO</button>
+        <button onclick="location.href='unpequeñofallo17.html.mp4'">UN ERROR,NO PASA NADA</button>
+        <button onclick="location.href='buzzligthyear18.html.mp4'">MI NAVE!!!!!</button>
+        <button onclick="location.href='army19.html.mp4'">ARMY PROMEDIO AL SABER QUE NO CONOCERAN A LOS BTS</button>
+        <button onclick="location.href='hada20.html.mp4'">HADAS DE TIK TOK </button>
+        <button onclick="location.href='depredador11.html.mp4'"> DEPREDADOR MASCARA REAL</button>
+        <button onclick="location.href='quieroagua21.html.mp4'">QUIERO AGUA</button>
+        <button onclick="location.href='nomepises22.html.mp4'"> NO ME PISES PA</button>
+        <button onclick="location.href='futbol23.html.mp4'"> ¿SALE FUCHIBOL?</button>
+        <button onclick="location.href='andresgamer24.html.mp4'"> MUERTES TRISTES DEL ANIME </button>
+        <button onclick="location.href='caracoles25.html.mp4'">MCNUTT</button>
+        <button onclick="location.href='nomercyinmexico26.html.mp4'">NO MERCY IN MEXICO</button>
+        <button onclick="location.href='unclasico27.html.mp4'">UN CLASICO DE 2017</button>
+        <button onclick="location.href='noteduermasmorena28.html.mp4'">NO TE DUERMAS MORENA</button>
+        <button onclick="location.href='mispacman29.html.mp4'">MISS PACMAN </button>
+        <button onclick="location.href='tuvefe30.html.mp4'">SE CREIA SPIDERWENG</button>
+        <button onclick="location.href='pobreniño31.html.mp4'">MUY MAL</button>
+        <button onclick="location.href='trajedehallowen32.html.mp4'">TRAJE DE HALLOWEN REALISTA</button>
+        <button onclick="location.href='princesa33.html.mp4'">NO MUERDE -.-</button>
+        <button onclick="location.href='papalotesenohio34.html.mp4'">PAPALOTES EN OHIO </button>
+        <button onclick="location.href='epico35.html.mp4'">ÑIÑIÑIÑI</button>
+        <button onclick="location.href='steve36.html.mp4'">SE ME CAYO UN IDOLO</button>
 
-<div>
-<h2 for="pregunta1">1.¿Como te sientes hoy?</h2><br>
-<textarea id="pregunta1" name="pregunta1" rows="3" required></textarea>
-</div>
 
-<div>
-<h2 for="pregunta2">2.¿Que emociones has sentido esta semana?</h2><br>
-<textarea id="pregunta2" name="pregunta2" rows="3" required></textarea>
-</div>
 
-<div>
-<h2 for="pregunta3">3.¿que te hace feliz?</h2><br>
-<textarea id="pregunta3" name="pregunta3" rows="3" required></textarea>
-</div>
 
-<div>
-<h2 for="pregunta4">4.¿Que te hace sentir triste?</h2><br>
-<textarea id="pregunta4" name="pregunta4" rows="3" required></textarea>
-</div>
-
-<div>
-<h2 for="pregunta5">5.¿Que te causa estres?</h2><br>
-<textarea id="pregunta5" name="pregunta5" rows="3" required></textarea>
-</div>
-
-<div>
-<h2 for="pregunta6">6.¿Como manejas la ira?</h2><br>
-<textarea id="pregunta6" name="pregunta6" rows="3" required></textarea>
-</div>
-
-<div>
-<h2 for="pregunta7">7.¿Que haces para relajarte?</h2><br>
-<textarea id="pregunta7" name="pregunta7" rows="3" required></textarea>
-</div>
-
-<div>
-<h2 for="pregunta8">8.¿Que te da miedo?</h2><br>
-<textarea id="pregunta8" name="pregunta8" rows="3" required></textarea>
-</div>
-       
-<div>
-<h2 for="pregunta9">9.¿Que sientes cuando estas solo/a?</h2><br>
-<textarea id="pregunta9" name="pregunta9" rows="3" required></textarea>
-</div>
-   
-<div>
-    <h2 for="pregunta10">10.¿Que te hace sentir agradecido/a?</h2><br>
-    <textarea id="pregunta9" name="pregunta9" rows="3" required></textarea>
     </div>
-
-    <div>
-           <button type="submit">Enviar</button>
-        </div>
-    </form>
-  </body>
- </html>
+    <footer>
+        &copy; 2024 Mi PAGINA. Todos los derechos reservados.
+    </footer>
+</body>
+</html>
